@@ -60,12 +60,12 @@ describe("Calculator", () => {
       cy.get('.display').should('contain', '8000000000000')
     })
     
-    it('should allow division by zero, (2/0)=Infinity', () => {
+    it('should allow division by zero, (2/0)=Math Error', () => {
       cy.get('#number2').click();
       cy.get('#operator-divide').click();
       cy.get('#number0').click();
       cy.get('#operator-equals').click();
-      cy.get('.display').should('contain', 'Infinity')
+      cy.get('.display').should('contain', 'Math Error')
       })
 
 
